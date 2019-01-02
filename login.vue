@@ -117,8 +117,9 @@
                             var url = "http://127.0.0.1:3000/login?uname=" + uname + "&upwd=" + upwd;
                             this.axios.get(url).then(result => {
                                 if (result.data.code == 1) {
-                                    this.$router.push("/home");
+                                    this.$router.push("/");
                                     // console.log(result.data.data[0].id)
+                                    location.reload()
    
                                     localStorage.setItem("uid",result.data.data[0].id);
                                     localStorage.setItem("uname",result.data.data[0].uname);
